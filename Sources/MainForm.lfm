@@ -1,0 +1,185 @@
+object Form1: TForm1
+  Left = 558
+  Height = 295
+  Top = 250
+  Width = 470
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Form1'
+  ClientHeight = 295
+  ClientWidth = 470
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poDefaultPosOnly
+  LCLVersion = '2.0.0.3'
+  object PageControl: TPageControl
+    Left = 6
+    Height = 98
+    Top = 6
+    Width = 248
+    ActivePage = TabSheetShaft
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheetShaft: TTabSheet
+      Caption = 'Вал'
+      ClientHeight = 70
+      ClientWidth = 240
+      object EditTorque: TEdit
+        Left = 152
+        Height = 23
+        Top = 8
+        Width = 80
+        TabOrder = 0
+      end
+      object EditShaftDiam: TEdit
+        Left = 152
+        Height = 23
+        Top = 40
+        Width = 80
+        TabOrder = 1
+      end
+      object Label2: TLabel
+        AnchorSideTop.Control = EditTorque
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 15
+        Top = 12
+        Width = 134
+        Caption = 'Крутящий момент (Нм):'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        AnchorSideTop.Control = EditShaftDiam
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 15
+        Top = 44
+        Width = 108
+        Caption = 'Диаметр вала (мм):'
+        ParentColor = False
+      end
+    end
+    object TabSheetPlane: TTabSheet
+      Caption = 'Плоскость'
+      ClientHeight = 70
+      ClientWidth = 240
+      object ComboBoxKey: TComboBox
+        Left = 152
+        Height = 23
+        Top = 40
+        Width = 80
+        ItemHeight = 15
+        Style = csDropDownList
+        TabOrder = 0
+      end
+      object Label1: TLabel
+        AnchorSideTop.Control = ComboBoxKey
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = ComboBoxKey
+        Left = 8
+        Height = 15
+        Top = 44
+        Width = 127
+        Anchors = [akTop]
+        Caption = 'Сечение шпонки (мм):'
+        ParentColor = False
+      end
+      object EditForce: TEdit
+        Left = 152
+        Height = 23
+        Top = 8
+        Width = 80
+        TabOrder = 1
+      end
+      object Label4: TLabel
+        AnchorSideTop.Control = EditForce
+        AnchorSideTop.Side = asrCenter
+        Left = 8
+        Height = 15
+        Top = 12
+        Width = 123
+        Caption = 'Сдвигающая сила (Н):'
+        ParentColor = False
+      end
+    end
+  end
+  object GroupBox1: TGroupBox
+    Left = 262
+    Height = 92
+    Top = 12
+    Width = 202
+    Caption = 'Допускаемое напряжение (МПа)'
+    ClientHeight = 72
+    ClientWidth = 198
+    TabOrder = 1
+    object EditBearingStress: TEdit
+      Left = 80
+      Height = 23
+      Top = 8
+      Width = 80
+      Alignment = taRightJustify
+      OnChange = EditBearingStressChange
+      TabOrder = 0
+    end
+    object EditShearStress: TEdit
+      Left = 80
+      Height = 23
+      Top = 40
+      Width = 80
+      Alignment = taRightJustify
+      OnChange = EditShearStressChange
+      TabOrder = 1
+    end
+    object Label5: TLabel
+      AnchorSideTop.Control = EditBearingStress
+      AnchorSideTop.Side = asrCenter
+      Left = 8
+      Height = 15
+      Top = 12
+      Width = 60
+      Caption = 'На смятие:'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      AnchorSideTop.Control = EditShearStress
+      AnchorSideTop.Side = asrCenter
+      Left = 8
+      Height = 15
+      Top = 44
+      Width = 45
+      Caption = 'На срез:'
+      ParentColor = False
+    end
+  end
+  object MemoResult: TMemo
+    Left = 6
+    Height = 150
+    Top = 108
+    Width = 458
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 2
+  end
+  object ButtonPanel: TButtonPanel
+    Left = 6
+    Height = 26
+    Top = 263
+    Width = 458
+    OKButton.Name = 'OKButton'
+    OKButton.Caption = 'Рассчитать'
+    OKButton.DefaultCaption = False
+    OKButton.OnClick = OKButtonClick
+    HelpButton.Name = 'HelpButton'
+    HelpButton.DefaultCaption = True
+    HelpButton.OnClick = HelpButtonClick
+    CloseButton.Name = 'CloseButton'
+    CloseButton.DefaultCaption = True
+    CancelButton.Name = 'CancelButton'
+    CancelButton.DefaultCaption = True
+    TabOrder = 3
+    ShowButtons = [pbOK, pbHelp]
+    ShowBevel = False
+  end
+end

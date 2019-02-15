@@ -1,2 +1,10 @@
+Sources/backup
+Sources/lib
 *.exe
+*.bat
+*.dbg
 *.ini
+*.res
+!SimpleGate.res
+Dry/*
+!Dry/*.pas
